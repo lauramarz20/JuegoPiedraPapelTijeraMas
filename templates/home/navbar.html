@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Game</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'list' %}">Tabla de puntajes<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <form action="{% url 'game' %}" method="post">
+            {% csrf_token %}
+                <input type="hidden" id="id_gamer" name="id_gamer" value="1">
+                <input type="hidden" id="id_gamer_name" name="id_gamer_name" value="-">
+                <input type="hidden" id="gamer_score_final" name="id_gamer_score_final" value="0">
+                <input type="submit" href="#" class="btn btn-danger" value="Salir">
+            </form>
+        </li>
+        </ul>
+    </div>
+</nav>
